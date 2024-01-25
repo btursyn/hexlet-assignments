@@ -1,0 +1,30 @@
+<%# https://guides.rubyonrails.org/form_helpers.html %>
+<%= form_with model: task do |form| %>
+  <%= form.label :completed %><br>
+  <%# Содержит массив с сообщениями ошибок %>
+  <%# https://apidock.com/rails/ActiveModel/Errors/full_messages_for %>
+  <%= task.errors.full_messages_for(:completed).join(' ') if task.errors.present? %>
+  <%= form.text_field :completed %><br>
+
+  <%= form.label :creator %><br>
+  <%= task.errors.full_messages_for(:creator).join(' ') if task.errors.present? %>
+  <%= form.text_area :creator %><br>
+
+  <%= form.label :description %><br>
+  <%= task.errors.full_messages_for(:description).join(' ') if task.errors.present? %>
+  <%= form.text_area :description %><br>
+  
+  <%= form.label :name %><br>
+  <%= task.errors.full_messages_for(:name).join(' ') if task.errors.present? %>
+  <%= form.text_area :name %><br>
+  
+  <%= form.label :performer %><br>
+  <%= task.errors.full_messages_for(:performer).join(' ') if task.errors.present? %>
+  <%= form.text_area :performer %><br>
+  
+  <%= form.label :status %><br>
+  <%= task.errors.full_messages_for(:status).join(' ') if task.errors.present? %>
+  <%= form.text_area :status %><br>
+  <br>
+  <%= form.submit %>
+<% end %>
