@@ -28,6 +28,7 @@ gem 'jbuilder'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
 end
 
 group :development do
@@ -35,12 +36,9 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'web-console', '>= 4.1.0'
   # gem 'spring'
-  gem 'annotate'
-  gem 'faker'
 end
 
 group :test do
-  gem 'faker'
   gem 'minitest-power_assert'
 end
 

@@ -503,7 +503,7 @@
     }
   }
   class BlobRecord {
-    constructor(file, checksum, url, customHeaders = {}) {
+    constructor(file, checksum, url) {
       this.file = file;
       this.attributes = {
         filename: file.name,
@@ -517,9 +517,6 @@
       this.xhr.setRequestHeader("Content-Type", "application/json");
       this.xhr.setRequestHeader("Accept", "application/json");
       this.xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-      Object.keys(customHeaders).forEach((headerKey => {
-        this.xhr.setRequestHeader(headerKey, customHeaders[headerKey]);
-      }));
       const csrfToken = getMetaValue("csrf-token");
       if (csrfToken != undefined) {
         this.xhr.setRequestHeader("X-CSRF-Token", csrfToken);
@@ -599,12 +596,11 @@
   }
   let id = 0;
   class DirectUpload {
-    constructor(file, url, delegate, customHeaders = {}) {
+    constructor(file, url, delegate) {
       this.id = ++id;
       this.file = file;
       this.url = url;
       this.delegate = delegate;
-      this.customHeaders = customHeaders;
     }
     create(callback) {
       FileChecksum.create(this.file, ((error, checksum) => {
@@ -612,7 +608,7 @@
           callback(error);
           return;
         }
-        const blob = new BlobRecord(this.file, checksum, this.url, this.customHeaders);
+        const blob = new BlobRecord(this.file, checksum, this.url);
         notify(this.delegate, "directUploadWillCreateBlobWithXHR", blob.xhr);
         blob.create((error => {
           if (error) {
@@ -754,9 +750,9 @@
     }
   }
   function didClick(event) {
-    const button = event.target.closest("button, input");
-    if (button && button.type === "submit" && button.form) {
-      submitButtonsByForm.set(button.form, button);
+    const {target: target} = event;
+    if ((target.tagName == "INPUT" || target.tagName == "BUTTON") && target.type == "submit" && target.form) {
+      submitButtonsByForm.set(target.form, target);
     }
   }
   function didSubmitForm(event) {
@@ -820,8 +816,6 @@
   }
   setTimeout(autostart, 1);
   exports.DirectUpload = DirectUpload;
-  exports.DirectUploadController = DirectUploadController;
-  exports.DirectUploadsController = DirectUploadsController;
   exports.start = start;
   Object.defineProperty(exports, "__esModule", {
     value: true

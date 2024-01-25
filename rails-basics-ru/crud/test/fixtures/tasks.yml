@@ -1,18 +1,17 @@
-# == Schema Information
-#
-# Table name: tasks
-#
-#  id          :integer          not null, primary key
-#  completed   :boolean
-#  creator     :string
-#  description :string
-#  name        :string
-#  performer   :string
-#  status      :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one: {}
+one:
+  name: MyString
+  description: MyString
+  status: MyString
+  creator: MyString
+  performer: MyString
+  completed: false
 
-two: {}
+two:
+  name: MyString
+  description: MyString
+  status: MyString
+  creator: MyString
+  performer: MyString
+  completed: false

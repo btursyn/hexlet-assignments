@@ -20,7 +20,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       completed: Faker::Boolean.boolean
     }
 
-    @task = Task.create(@task_attributes)
+    @task = tasks(:one)
   end
 
   test 'should get index' do
