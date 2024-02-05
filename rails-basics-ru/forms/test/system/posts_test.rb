@@ -15,8 +15,7 @@ class PostsTest < ApplicationSystemTestCase
     click_on "New post"
 
     fill_in "Body", with: @post.body
-    fill_in "Boolean", with: @post.boolean
-    fill_in "Published", with: @post.published
+    check "Published" if @post.published
     fill_in "Summary", with: @post.summary
     fill_in "Title", with: @post.title
     click_on "Create Post"
@@ -30,8 +29,7 @@ class PostsTest < ApplicationSystemTestCase
     click_on "Edit this post", match: :first
 
     fill_in "Body", with: @post.body
-    fill_in "Boolean", with: @post.boolean
-    fill_in "Published", with: @post.published
+    check "Published" if @post.published
     fill_in "Summary", with: @post.summary
     fill_in "Title", with: @post.title
     click_on "Update Post"

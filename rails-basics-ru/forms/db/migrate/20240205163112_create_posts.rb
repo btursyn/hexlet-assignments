@@ -4,8 +4,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.string :title
       t.text :body
       t.string :summary
-      t.string :published
-      t.string :boolean
+      t.boolean :published
 
       t.timestamps
     end
