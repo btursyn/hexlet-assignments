@@ -1,0 +1,8 @@
+= simple_form_for(task) do |f|
+  = f.input :name
+  = f.input :description
+
+  = f.association :user, collection: @users, prompt: "Choose a User"
+  = f.association :status, collection: @statuses, prompt: "Choose a Status"
+
+  = f.button :submit, class: 'btn btn-success mt-4 btn-block'
