@@ -12,19 +12,8 @@ en:
         other: '%{count} comments'
     edit:
       title: Edit Post
-
-    create:
-      success: Post was created.
-
     new:
       title: New Post
-
-    update:
-      success: Post was updated.
-
-    destroy:
-      success: Post was destroyed.
-
     show:
       body: Body
       comments: Comments
@@ -33,9 +22,3 @@ en:
     comments:
       edit:
         title: Editing comment
-
-      create:
-        success: Comment was created.
-
-      update:
-        success: Comment was updated.

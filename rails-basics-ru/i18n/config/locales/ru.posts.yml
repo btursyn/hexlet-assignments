@@ -15,19 +15,8 @@ ru:
       table_title: Название
     new:
       title: Новый пост
-
     edit:
       title: Изменить пост
-
-    create:
-      success: Пост создан.
-
-    update:
-      success: Пост обновлен.
-
-    destroy:
-      success: Пост удален.
-
     show:
       body: Содержимое
       comments: Комментарии
@@ -37,9 +26,3 @@ ru:
     comments:
       edit:
         title: Изменить комментарий
-
-      create:
-        success: Комментарий создан.
-
-      update:
-        success: Комментарий обновлен.
