@@ -15,14 +15,30 @@ ru:
       table_title: Название
     new:
       title: Новый пост
+
     edit:
       title: Изменить пост
     show:
       body: Содержимое
       comments: Комментарии
+      
+    create:
+      success: Пост создан.
+
+    update:
+      success: Пост обновлен.
+
+    destroy:
+      success: Пост удален.
 
     # END
 
     comments:
       edit:
         title: Изменить комментарий
+
+      create:
+        success: Комментарий создан.
+
+      update:
+        success: Комментарий обновлен.

@@ -12,5 +12,6 @@ ru:
     shared:
       nav:
         home: Домой
+        posts: Посты
         hexlet_logo: Хекслет лого
   show: Показать

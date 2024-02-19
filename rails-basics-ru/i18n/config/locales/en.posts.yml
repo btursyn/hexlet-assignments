@@ -10,10 +10,22 @@ en:
         zero: no comments
         one: '%{count} comment'
         other: '%{count} comments'
+
+    create:
+      success: Post was created.
+
     edit:
       title: Edit Post
+
     new:
       title: New Post
+
+    update:
+      success: Post was updated.
+
+    destroy:
+      success: Post was destroyed.
+
     show:
       body: Body
       comments: Comments
@@ -22,3 +34,9 @@ en:
     comments:
       edit:
         title: Editing comment
+
+      create:
+        success: Comment was created.
+
+      update:
+        success: Comment was updated.
